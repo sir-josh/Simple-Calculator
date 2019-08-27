@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <title>Simple Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="calculator__header"><i class="fas fa-calculator"></i> Simple Calculator</div>
+            <div class="calculator__screen">
+                <div class="history" id="history"> </div>
+                <div class="answer-box" id="answer-box">0</div>
+            </div>
+            <div class="calculator__keyboard">
+                <div class="first-keys grid-4">
+                    <button type="button" class="operator" id="cls">CE</button>
+                    <button type="button" class="operator" id="clearAll">C</button>
+                    <button type="button" class="operator" id="bckspace"><i class="fas fa-backspace"></i></button>
+                    <button type="button" class="operator" id="/"><i class="fas fa-divide"></i></button>
+                </div>
+                <div class="second-keys grid-4">
+                    <button type="button" class="number" id="7">7</button>
+                    <button type="button" class="number" id="8">8</button>
+                    <button type="button" class="number" id="9">9</button>
+                    <button type="button" class="operator" id="*"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="third-keys grid-4">
+                    <button type="button" class="number" id="4">4</button>
+                    <button type="button" class="number" id="5">5</button>
+                    <button type="button" class="number" id="6">6</button>
+                    <button type="button" class="operator" id="-"><i class="fas fa-minus"></i></button>
+                </div>
+                <div class="fourth-keys grid-4">
+                    <button type="button" class="number" id="1">1</button>
+                    <button type="button" class="number" id="2">2</button>
+                    <button type="button" class="number" id="3">3</button>
+                    <button type="button" class="operator" id="+"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="fifth-keys grid-4">
+                    <button type="button" class="operator" id="negate"><img src="less-plus-signs.svg"
+                            class="plus-minus-img" alt="plus-minus-operator" width="18"></button>
+                    <button type="button" class="number" id="0">0</button>
+                    <button type="button" class="operator" id=".">.</button>
+                    <button type="button" class="operator" id="answer">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+
+</html>
