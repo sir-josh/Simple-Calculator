@@ -85,7 +85,10 @@ let numbers = document.querySelectorAll('.number');                 //Get all th
 numbers.forEach(number => number.addEventListener('click', () => {
     let output = revertFormattedAnswer(getExpression());
     if (output != NaN) {                                           //To check if an expression/output is  a number,
-                                             
+        output = output.toString();  
+        if(output[0] == '0'){                                      //A bug output issue, this removes the zero from non-zero number when a number operator is clicked
+            output = output.substring(1);
+        }                                        
         output = output + number.innerText;                        //Then put the number into history
         printAnswer(output);
     }
