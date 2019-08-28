@@ -14,7 +14,11 @@ const formatAnswerValue = (num) => {                              //Formats outp
     if (num == "-") {                                            // if backspace is clicked when the output contains negative single value then return 0
         return 0;
     }
-    return Number(num).toLocaleString('en-US');                  // Using toLocaleString() is less faster than Regex
+   // return Number(num).toLocaleString('en-US');                  // Using toLocaleString() rounds up the decimal part and is less faster than Regex
+
+    let numSeparatedByDot = num.toString().split(".");             // Split the answer(if float) by dot
+    numSeparatedByDot[0] = numSeparatedByDot[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");     //Format the first part of the float value
+    return numSeparatedByDot.join(".");                            // Then join integer part and the decimal part (Mantisa)
 }
 
 const revertFormattedAnswer = (num) => Number(num.replace(/,/g, ''));    //Reverse formatted output for normal JS logic operation
@@ -81,6 +85,7 @@ let numbers = document.querySelectorAll('.number');                 //Get all th
 numbers.forEach(number => number.addEventListener('click', () => {
     let output = revertFormattedAnswer(getExpression());
     if (output != NaN) {                                           //To check if an expression/output is  a number,
+                                             
         output = output + number.innerText;                        //Then put the number into history
         printAnswer(output);
     }
